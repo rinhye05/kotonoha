@@ -1,0 +1,91 @@
+/* Reading and writing comfortably across phones, tablets, and desktops. */
+html { scroll-padding-top: 16px; }
+.layout > *, .intro > div, .tabs, .tools, .paper { min-width: 0; }
+.library-panel { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.library-toggle { display: none; }
+.original, .reading, .paper-head h2 { overflow-wrap: anywhere; }
+.writing { overflow-wrap: anywhere; scroll-margin-block: 100px; }
+button, summary, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, summary { touch-action: manipulation; }
+dialog { max-height: calc(100dvh - 32px); overflow-y: auto; overscroll-behavior: contain; }
+dialog input, dialog textarea { font-size: 18px; }
+@media (max-width: 1000px) {
+  main { margin-block: 0; padding: 28px; }
+  .tabs button, .tools button, .check, .under button, .artist-group summary, .song, .add { min-height: 44px; }
+  .themes button { width: 44px; height: 44px; }
+  .search input { font-size: 16px; min-width: 0; }
+  .check input { width: 20px; height: 20px; flex-shrink: 0; }
+}
+@media (max-width: 700px) {
+  header { height: auto; min-height: 76px; padding: 12px max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left)); gap: 10px; }
+  .brand { gap: 8px; min-width: 0; }
+  .brand .mark { width: 26px; height: 26px; flex-shrink: 0; }
+  .brand strong { font-size: 22px; letter-spacing: 2px; }
+  .brand small { font-size: 10px; letter-spacing: .6px; }
+  .themes { flex-shrink: 0; padding: 3px; gap: 0; }
+  .themes button { width: 44px; height: 44px; }
+  aside { padding: 12px max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left)); }
+  .side-title { margin: 0; display: block; }
+  .side-title h2, .side-title > #songCount { display: none; }
+  .library-toggle { display: flex; width: 100%; min-height: 48px; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; text-align: left; }
+  #libraryCurrent { font-size: 19px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .library-action { font-size: 16px; color: var(--purple); white-space: nowrap; flex-shrink: 0; }
+  .library-toggle[aria-expanded="true"] .library-action > span { display: inline-block; transform: rotate(180deg); }
+  .library-panel { padding-top: 12px; }
+  .search { min-height: 48px; margin-bottom: 12px; }
+  #artistFilter { min-height: 48px; font-size: 18px; margin-bottom: 10px; }
+  .song-list { max-height: min(42dvh, 350px); overscroll-behavior-y: contain; }
+  .artist-group summary { padding: 12px 5px; }
+  .song { min-height: 56px; padding: 9px 10px; }
+  .song strong { font-size: 18px; }
+  .song small { font-size: 14px; }
+  .add { min-height: 48px; margin-top: 12px; }
+  main { padding: 22px max(16px, env(safe-area-inset-right)) calc(24px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); }
+  .topline { flex-wrap: wrap; gap: 7px; font-size: 13px; }
+  .topline .eyebrow { font-size: 10px; letter-spacing: 1.2px; }
+  .intro { margin: 20px 0; gap: 10px; }
+  .intro h1 { font-size: clamp(25px, 6.6vw, 32px); line-height: 1.3; letter-spacing: -.6px; }
+  .intro p { font-size: 16px; }
+  .flower { display: none; }
+  .controls { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; scroll-margin-top: 12px; }
+  .tabs { width: 100%; }
+  .tabs button { flex: 1; padding: 10px 6px; min-height: 46px; font-size: 18px; }
+  .tools { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; width: 100%; }
+  .tools button, .check { display: flex; justify-content: center; align-items: center; min-height: 46px; font-size: 17px; padding: 8px 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+  .tools:has(.check[hidden]) #export { grid-column: 1 / -1; }
+  .tools svg { flex-shrink: 0; width: 18px; height: 18px; }
+  .paper { padding: 28px 16px 22px; min-height: 400px; border-radius: 10px; }
+  .paper:before { left: 20px; }
+  .paper-head { padding-bottom: 22px; }
+  .paper-head h2 { font-size: 27px; letter-spacing: .4px; line-height: 1.5; }
+  .paper-head .eyebrow { font-size: 9px; letter-spacing: 1.2px; }
+  .row { padding: 18px 0 8px 24px; }
+  .num { top: 25px; font-size: 10px; }
+  .original { font-size: 19px; line-height: 1.9; letter-spacing: .3px; }
+  .original:lang(ko), .writing:lang(ko) { font-size: 23px; }
+  .reading { font-size: 17px; line-height: 1.7; letter-spacing: 0; margin-top: 6px; }
+  .writing { font-size: 20px; line-height: 1.8; min-height: 54px; padding-block: 10px 5px; }
+  .writing::placeholder { font-size: 17px; line-height: 1.8; }
+  .under { flex-wrap: wrap; align-items: center; font-size: 14px; gap: 10px; }
+  .under > span { flex: 1 1 180px; }
+  .under button { min-height: 48px; padding: 10px 12px; font-size: 17px; background: var(--tint); border-radius: 8px; }
+  .blank-note { min-height: 300px; }
+  .blank-note .primary, .example-link { min-height: 48px; }
+  dialog { width: calc(100% - 24px); max-height: calc(100dvh - 24px); padding: 22px 18px; }
+  dialog h2 { font-size: 27px; line-height: 1.4; }
+  dialog input, dialog textarea { font-size: 18px; min-height: 48px; }
+  dialog textarea { min-height: 120px; }
+  .form-actions { position: sticky; bottom: -22px; padding: 12px 0; background: var(--paper); }
+  .form-actions button { min-height: 48px; padding-inline: 20px; font-size: 18px; }
+}
+@media (max-width: 359px) {
+  header { padding-inline: 12px; }
+  .brand small { font-size: 9px; }
+  .brand .mark { display: none; }
+  main { padding-inline: 12px; }
+  .paper { padding-inline: 12px; }
+  .row { padding-left: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
