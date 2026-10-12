@@ -3,7 +3,7 @@ const defaults=[{id:'sample-spring',title:'春の余白',artist:'창작 예시',
 let data;try{data=JSON.parse(localStorage.getItem('kotonoha-v1')||'{}')||{}}catch{data={}}
 let custom=Array.isArray(data.custom)?data.custom.filter(s=>s&&typeof s.id==='string'&&Array.isArray(s.lines)&&s.id.startsWith('custom-')):[];
 let lyrics=data.lyrics&&typeof data.lyrics==='object'?data.lyrics:{};
-let songs=[...catalogSongs.map(s=>({...s,lines:Array.isArray(lyrics[s.id])?lyrics[s.id]:[]})),...custom,...defaults.map(s=>({...s,lines:Array.isArray(lyrics[s.id])?lyrics[s.id]:s.lines}))];
+let songs=[...catalogSongs.map(s=>({...s,lines:Array.isArray(lyrics[s.id])?lyrics[s.id]:s.lines})),...custom,...defaults.map(s=>({...s,lines:Array.isArray(lyrics[s.id])?lyrics[s.id]:s.lines}))];
 let current=songs.find(x=>x.id===data.current)||songs[0];
 let mode=data.mode==='ko'?'ko':'jp';let notes=data.notes||{};let timer;let editingId=null;
 const expanded=new Set([current.artist]);

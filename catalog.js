@@ -1,4 +1,4 @@
-// Song metadata only. Lyrics are added by the user and stored in their browser.
+// Song metadata with user-supplied bundled lyrics and optional browser overrides.
 const artistCatalog = [
   ['Mrs. GREEN APPLE', ['Bokuno Koto','Ao To Natsu','Tenbyouno Uta','Que Sera Sera','A Priori','Inferno','Naniwo Naniwo','Columbus','Darling','Lilac','Blue Ambience',"Lovin'",'Brand New','Dance Hall']],
   ['Kanaria', ['Brain']],
@@ -33,5 +33,5 @@ const artistAliases = {
 };
 const songAliases = {'Darling':'달링','Columbus':'Colimbus','Fleeting Lullaby':'Fleeting Lullabu','잿빛과 푸름':'쟂빛과 푸름','파프리카':'파프리가'};
 const catalogSongs = artistCatalog.flatMap(([artist,titles],a)=>titles.map((title,t)=>({
-  id:`catalog-${a}-${t}`,title,artist,symbol:artist==='Mrs. GREEN APPLE'?'青':artist==='요네즈 켄시'?'米':'♪',lines:[],catalog:true
+  id:`catalog-${a}-${t}`,title,artist,symbol:artist==='Mrs. GREEN APPLE'?'青':artist==='요네즈 켄시'?'米':'♪',lines:bundledLyrics[`catalog-${a}-${t}`]||[],catalog:true
 })));
