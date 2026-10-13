@@ -90,6 +90,8 @@ dialog input, dialog textarea { font-size: 18px; }
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
 
-/* Keep the meaning beneath each Japanese writing line. */
+/* Show the translation between pronunciation and handwriting. */
 .translation { margin: 9px 0 8px; color: var(--muted); font: 20px/1.7 'Gaegu', sans-serif; overflow-wrap: anywhere; }
 @media (max-width: 700px) { .translation { font-size: 20px; margin-top: 10px; } }
+
+@media (max-width: 700px) { .tools #export { grid-column: 1 / -1; } }

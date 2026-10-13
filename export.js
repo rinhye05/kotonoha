@@ -49,8 +49,8 @@ async function exportLyricImages({song, mode, values, showReading, savedAt}) {
     };
     addText(line[mode === 'jp' ? 0 : 2], mode === 'jp' ? fonts.jp : fonts.ko, '#383341', 48);
     if (mode === 'jp' && showReading && line[1]) addText(line[1], fonts.small, '#918591', 34);
-    addText(values[index] || '', mode === 'jp' ? fonts.jp : fonts.ko, '#7859a2', 52, true);
     if (mode === 'jp' && line[2]) addText(line[2], fonts.ko, '#86798c', 44);
+    addText(values[index] || '', mode === 'jp' ? fonts.jp : fonts.ko, '#7859a2', 52, true);
     blocks[0].number = String(index + 1).padStart(2, '0');
     blocks[0].gapBefore = 20; blocks[0].height += 20;
     blocks.at(-1).height += 14;
