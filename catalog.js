@@ -31,7 +31,7 @@ const artistAliases = {
   '아이묭':'あいみょん Aimyon', 'back number':'back numper', 'Yuuri':'유우리 優里',
   'Tatsuya Kitani':'키타니 타츠야', 'Yuika':'유이카', '로쿠데나시':'Rokudenashi ロクデナシ'
 };
-const songAliases = {'Darling':'달링','Columbus':'Colimbus','Fleeting Lullaby':'Fleeting Lullabu','잿빛과 푸름':'쟂빛과 푸름','파프리카':'파프리가'};
+const songAliases = {'Darling':'달링','Columbus':'Colimbus','Fleeting Lullaby':'Fleeting Lullabu','잿빛과 푸름':'쟂빛과 푸름'};
 const catalogSongs = artistCatalog.flatMap(([artist,titles],a)=>titles.map((title,t)=>({
   id:`catalog-${a}-${t}`,title,artist,symbol:artist==='Mrs. GREEN APPLE'?'青':artist==='요네즈 켄시'?'米':'♪',lines:bundledLyrics[`catalog-${a}-${t}`]||[],catalog:true
 })));
