@@ -1,7 +1,7 @@
 // Song metadata with user-supplied bundled lyrics and optional browser overrides.
 const artistCatalog = [
   ['Mrs. GREEN APPLE', ['Bokuno Koto','Ao To Natsu','Tenbyouno Uta','Que Sera Sera','A Priori','Inferno','Naniwo Naniwo','Columbus','Darling','Lilac','Blue Ambience',"Lovin'",'Brand New','Dance Hall']],
-  ['Kanaria', ['Brain']],
+  ['Kanaria', ['Brain','취한 줄을 모르고']],
   ['Porno Graffitti', ['THE REVO']],
   ['Yuuri', ['커튼콜','레오','베텔기우스','드라이플라워']],
   ['back number', ['히로인']],
@@ -23,10 +23,13 @@ const artistCatalog = [
   ['Leina', ['utatane']],
   ['natori', ['overdose']],
   ['로쿠데나시', ['그저 목소리 하나']],
-  ['Official髭男dism', ['Pretender']]
+  ['Official髭男dism', ['Pretender']],
+  ["보카로", ["롤링걸", "Tell Your World", "자상무색", "로스트원의호곡", "심해소녀", "모래의 행성", "소녀A", "누덕누덕 스타카토", "아스트로넛", "생명에게 미움받고있어", "Daybreak Frontline", "시간의 비, 최종전쟁", "유령저택의 목매단 소녀", "천성의 약함", "누군가의 심장이 될 수 있다면", "호시아이", "샤를", "고스트 룰", "내일의 밤하늘 초계반", "육조년과 하룻밤 이야기", "이 실없이 멋진 세상은 나를 위해 있어", "세계를 부수고 있어"]],
+  ["Goose House", ["소리가 나는 쪽으로"]],
+  ["AliA", ["숨바꼭질"]]
 ];
 const artistAliases = {
-  'Mrs. GREEN APPLE':'Mrs.GreenApple 미세스 그린 애플', '요네즈 켄시':'요네즈켄시 Kenshi Yonezu 米津玄師',
+  'Kanaria':'Karania 카나리아','보카로':'보컬로이드 VOCALOID', 'Mrs. GREEN APPLE':'Mrs.GreenApple 미세스 그린 애플', '요네즈 켄시':'요네즈켄시 Kenshi Yonezu 米津玄師',
   'YOASOBI':'요아소비', 'Official髭男dism':'오피셜하게단디즘 Official Hige Dandism',
   '아이묭':'あいみょん Aimyon', 'back number':'back numper', 'Yuuri':'유우리 優里',
   'Tatsuya Kitani':'키타니 타츠야', 'Yuika':'유이카', '로쿠데나시':'Rokudenashi ロクデナシ'
